@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/zhy/robosense_ws/rslidar_sdk/build/devel/setup.sh

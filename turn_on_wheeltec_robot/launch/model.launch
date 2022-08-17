@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- 设置参数 -->
+    <param name="robot_description" textfile="$(find turn_on_wheeltec_robot)/urdf/senior_akm_robot.urdf" />
+
+    <!-- 启动 rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+
+</launch>
