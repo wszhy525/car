@@ -50,8 +50,8 @@ using namespace std;
 
 typedef pcl::PointXYZI  PointType;
 
-extern const string pointCloudTopic = "rslidar_points";
-extern const string imuTopic = "/imu/data";
+extern const string pointCloudTopic = "/rslidar_points";
+extern const string imuTopic = "/imu";
 extern const bool useCloudRing = false;
 // Save pcd
 extern const string fileDirectory = "/tmp/";

@@ -682,7 +682,7 @@ public:
             sensor_msgs::PointCloud2 cloudMsgTemp;
             pcl::toROSMsg(*cloudKeyPoses3D, cloudMsgTemp);
             cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-            cloudMsgTemp.header.frame_id = "/camera_init";
+            cloudMsgTemp.header.frame_id = "camera_init";
             pubKeyPoses.publish(cloudMsgTemp);
         }
 
@@ -690,7 +690,7 @@ public:
             sensor_msgs::PointCloud2 cloudMsgTemp;
             pcl::toROSMsg(*laserCloudSurfFromMapDS, cloudMsgTemp);
             cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-            cloudMsgTemp.header.frame_id = "/camera_init";
+            cloudMsgTemp.header.frame_id = "camera_init";
             pubRecentKeyFrames.publish(cloudMsgTemp);
         }
     }
@@ -764,7 +764,7 @@ public:
         sensor_msgs::PointCloud2 cloudMsgTemp;
         pcl::toROSMsg(*globalMapKeyFramesDS, cloudMsgTemp);
         cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-        cloudMsgTemp.header.frame_id = "/camera_init";
+        cloudMsgTemp.header.frame_id = "camera_init";
         pubLaserCloudSurround.publish(cloudMsgTemp);  
 
         globalMapKeyPoses->clear();
@@ -838,7 +838,7 @@ public:
             sensor_msgs::PointCloud2 cloudMsgTemp;
             pcl::toROSMsg(*nearHistorySurfKeyFrameCloudDS, cloudMsgTemp);
             cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-            cloudMsgTemp.header.frame_id = "/camera_init";
+            cloudMsgTemp.header.frame_id = "camera_init";
             pubHistoryKeyFrames.publish(cloudMsgTemp);
         }
 
@@ -884,7 +884,7 @@ public:
             sensor_msgs::PointCloud2 cloudMsgTemp;
             pcl::toROSMsg(*closed_cloud, cloudMsgTemp);
             cloudMsgTemp.header.stamp = ros::Time().fromSec(timeLaserOdometry);
-            cloudMsgTemp.header.frame_id = "/camera_init";
+            cloudMsgTemp.header.frame_id = "camera_init";
             pubIcpKeyFrames.publish(cloudMsgTemp);
         }   
         /*
