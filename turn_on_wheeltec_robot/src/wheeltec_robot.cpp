@@ -466,7 +466,7 @@ turn_on_robot::turn_on_robot():Sampling_Time(0),Power_voltage(0)
   private_nh.param<int>        ("serial_baud_rate", serial_baud_rate, 115200); //Communicate baud rate 115200 to the lower machine //和下位机通信波特率115200
   private_nh.param<std::string>("odom_frame_id",    odom_frame_id,    "odom_combined");      //The odometer topic corresponds to the parent TF coordinate //里程计话题对应父TF坐标
   private_nh.param<std::string>("robot_frame_id",   robot_frame_id,   "base_footprint"); //The odometer topic corresponds to sub-TF coordinates //里程计话题对应子TF坐标
-  private_nh.param<std::string>("gyro_frame_id",    gyro_frame_id,    "gyro_link"); //IMU topics correspond to TF coordinates //IMU话题对应TF坐标
+  private_nh.param<std::string>("gyro_frame_id",    gyro_frame_id,    "base_link"); //IMU topics correspond to TF coordinates //IMU话题对应TF坐标
 
   voltage_publisher = n.advertise<std_msgs::Float32>("PowerVoltage", 10); //Create a battery-voltage topic publisher //创建电池电压话题发布者
   odom_publisher    = n.advertise<nav_msgs::Odometry>("odom", 50); //Create the odometer topic publisher //创建里程计话题发布者

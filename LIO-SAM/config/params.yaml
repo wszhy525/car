@@ -1,19 +1,19 @@
 lio_sam:
 
   # Topics
-  pointCloudTopic: "points_raw"               # Point cloud data
+  pointCloudTopic: "velodyne_points"               # Point cloud data
   imuTopic: "imu"                         # IMU data
   odomTopic: "odometry/imu"                   # IMU pre-preintegration odometry, same frequency as IMU
   gpsTopic: "odometry/gpsz"                   # GPS odometry topic from navsat, see module_navsat.launch file
 
   # Frames
-  lidarFrame: "velodyne"
-  baselinkFrame: "velodyne"
+  lidarFrame: "base_link"
+  baselinkFrame: "base_link"
   odometryFrame: "odom"
-  mapFrame: "velodyne"
+  mapFrame: "map"
 
   # GPS Settings
-  useImuHeadingInitialization: true           # if using GPS data, set to "true"
+  useImuHeadingInitialization: false           # if using GPS data, set to "true"
   useGpsElevation: false                      # if GPS elevation is bad, set to "false"
   gpsCovThreshold: 2.0                        # m^2, threshold for using GPS data
   poseCovThreshold: 25.0                      # m^2, threshold for using GPS data
