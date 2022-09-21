@@ -7,7 +7,7 @@ lio_sam:
   gpsTopic: "odometry/gpsz"                   # GPS odometry topic from navsat, see module_navsat.launch file
 
   # Frames
-  lidarFrame: "base_link"
+  lidarFrame: "imu"
   baselinkFrame: "base_link"
   odometryFrame: "odom"
   mapFrame: "map"
@@ -31,20 +31,20 @@ lio_sam:
   lidarMaxRange: 1000.0                       # default: 1000.0, maximum lidar range to be used
 
   # IMU Settings
-  imuAccNoise: 3.9939570888238808e-03
-  imuGyrNoise: 1.5636343949698187e-03
-  imuAccBiasN: 6.4356659353532566e-05
-  imuGyrBiasN: 3.5640318696367613e-05
-  imuGravity: 9.80511
+  imuAccNoise: 1.2923884895689358e-02
+  imuGyrNoise: 4.3975217124874220e-04
+  imuAccBiasN: 2.3507756294463981e-04
+  imuGyrBiasN: 1.9492763248264503e-05
+  imuGravity: 9.79484
   imuRPYWeight: 0.01
 
   # Extrinsics: T_lb (lidar -> imu)
   extrinsicTrans: [0.0, 0.0, 0.0]
-  extrinsicRot: [-1, 0, 0,
+  extrinsicRot: [1, 0, 0,
                   0, 1, 0,
-                  0, 0, -1]
-  extrinsicRPY: [0, -1, 0,
-                 1, 0, 0,
+                  0, 0, 1]
+  extrinsicRPY: [1, 0, 0,
+                 0, 1, 0,
                  0, 0, 1]
   # extrinsicRot: [1, 0, 0,
   #                 0, 1, 0,
@@ -112,7 +112,7 @@ ekf_gps:
   publish_tf: false
   map_frame: map
   odom_frame: odom
-  base_link_frame: base_link
+  base_link_frame: imu_link
   world_frame: odom
 
   frequency: 50

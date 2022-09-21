@@ -1,7 +1,9 @@
 <launch>
 
     <arg name="project" default="lio_sam"/>
-    
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_footprint" args="0.0 0 0 0 0 0  imu_link base_footprint 100" /> -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_footprint" args="0.0 0 0 0 0 0   base_footprint base_link 100" /> -->
+    <!-- rosrun tf static_transform_publisher 0 0 0 0 0 0  /base_link /base_footprint 100  -->
     <!-- Parameters -->
     <rosparam file="$(find lio_sam)/config/params.yaml" command="load" />
 

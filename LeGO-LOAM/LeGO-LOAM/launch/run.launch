@@ -1,7 +1,7 @@
 <launch>
     
     <!--- Sim Time -->
-    <param name="/use_sim_time" value="false" />
+    <param name="/use_sim_time" value="true" />
     <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
     
     <node pkg="nodelet" type="nodelet" name="passthrough" args="load pcl/PassThrough pcl_manager" output="screen">
