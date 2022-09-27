@@ -86,8 +86,8 @@
     </group>
     <!-- 启动rs雷达 -->
     <group if="$(eval rplidar_mode == 'rslidar')">
-        <include file="$(find rslidar_pointcloud)/launch/rs_lidar_16.launch"/>
-        <include file="$(find rslidar_pointcloud)/launch/rs_node.launch"/>
+        <include file="$(find rslidar_sdk)/launch/start.launch"/>
+        <include file="$(find rslidar_sdk)/launch/rs_node.launch"/>
         
         <node pkg="tf" type="static_transform_publisher" name="rslidar_to_base_laser" args="0.0 0 0 0 0 0  laser rslidar 100" />
         <!-- <node pkg="tf" type="static_transform_publisher" name="rslidar_to_laser" args="0.0 0 0 0 0 0 rslidar base_footprint 100" /> -->
