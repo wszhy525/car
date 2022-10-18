@@ -45,7 +45,7 @@
   </node>
 
   <node pkg="rrt_exploration" type="wait_for_fin" name="wait_for_fin" output="screen">
-  <param name="waiting_time" value="20"/>
+  <param name="waiting_time" value="100"/>
 
   </node>
 
